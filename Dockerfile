@@ -8,10 +8,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # 设置 root 用户的密码为 'root'
-RUN echo 'root:061103' | chpasswd
+RUN echo 'root:root' | chpasswd
 
 # 暴露 22 端口
-EXPOSE 22
+EXPOSE 8000
 
 # 启动 Shellinabox
 CMD ["/usr/bin/shellinaboxd", "-t", "-s", "/:LOGIN"]
